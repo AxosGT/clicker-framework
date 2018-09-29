@@ -14,14 +14,14 @@ class App extends Component {
         <Button
           onClick={(e) => {
             e.preventDefault();
-            this.props.onClickCount()
+            this.props.onClickCount(1)
           }}
         />
 
         <div>
           {this.props.clickCount}
         </div>
-        
+
       </div>
 
 
