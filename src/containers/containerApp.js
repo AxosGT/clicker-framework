@@ -1,15 +1,17 @@
 import { connect } from 'react-redux'
 import App from '../components/App'
+import {clickCount} from '../actions/index'
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(state.clickCount)
   return {
-    //activeTruth: state.setTruth
+    clickCount: state.clickCount
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    //onGetTruth: ()=>dispatch(getTruth())
+    onClickCount: ()=>dispatch(clickCount())
   }
 }
 

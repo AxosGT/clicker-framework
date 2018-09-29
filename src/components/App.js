@@ -4,13 +4,24 @@ import Button from './Button.js';
 import '../styles/App.css';
 
 class App extends Component {
+
   render() {
+
     return (
 
       <div className="App">
-      <Button
-        onClick={()=>console.log('test Button')}
-      />
+
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            this.props.onClickCount()
+          }}
+        />
+
+        <div>
+          {this.props.clickCount}
+        </div>
+        
       </div>
 
 
