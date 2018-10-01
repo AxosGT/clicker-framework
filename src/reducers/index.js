@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import clickCount from './clickCount.js'
 
-const setMyApp = combineReducers({
+const rootReducer = combineReducers({
   clickCount
 })
 
-export default setMyApp
+export default rootReducer
