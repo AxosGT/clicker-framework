@@ -4,9 +4,16 @@ import Button from './Button.js';
 import '../styles/App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.props.onPageLode();
+  };
+  // componentDidMount(){
+  //   this.props.onPageLode();
+  // }
 
   render() {
-
+    console.log(this.props.appJsonData)
     return (
 
       <div className="App">

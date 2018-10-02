@@ -1,12 +1,14 @@
-import { call, put, take } from 'redux-saga/effects'
+import { call, put, take,takeEvery } from 'redux-saga/effects'
+//import "USER_FETCH_REQUESTED" from '../actions/index';
 
 
-fetch('/game-info/gameInfo.json')
+//fetch('/game-info/gameInfo.json')
 
 function* fetchGameInfo() {
    try {
-      const data = yield call(()=>fetch('/game-info/gameInfo.json'));
-      yield put({type: "SET_APP_JSON", setData:data.json()});
+      const response = yield call(fetch,'/game-info/gameInfo.json');
+      const res = yield response.json()
+      yield put({type: "SET_APP_JSON", setData:res});
    } catch (e) {
       yield console.log(e.message)
       //put({type: "USER_FETCH_FAILED", message: e.message});
@@ -14,7 +16,9 @@ function* fetchGameInfo() {
 }
 
 function* mySaga() {
-  yield take("USER_FETCH_REQUESTED", fetchGameInfo);
+
+  yield takeEvery("USER_FETCH_REQUESTED", fetchGameInfo);
+
 }
 
 

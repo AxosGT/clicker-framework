@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux'
 import clickCount from './clickCount.js'
+import setAppJson from './setAppJson'
+
 
 const rootReducer = combineReducers({
-  clickCount
+  clickCount,
+  setAppJson
 })
 
 export default rootReducer
