@@ -6,7 +6,7 @@ class Button extends Component{
       <button
         type="button"
         onClick ={this.props.onClick}>
-        Click Here
+        {this.props.message}
       </button>
     )
   }

@@ -1,27 +1,49 @@
 import React, { Component } from 'react';
 import logo from '../styles/logo.svg';
 import Button from './Button.js';
+import AutoClicker from './AutoClicker.js';
 import '../styles/App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.props.onPageLode();
+
   };
-  // componentDidMount(){
+  // componentWillMount(){
   //   this.props.onPageLode();
   // }
 
   render() {
-    console.log(this.props.appJsonData)
+    //console.log(this.props.appJsonData.auto[0].frequency)
     return (
-
       <div className="App">
 
+      <div>
+        <AutoClicker
+          frequency={this.props.appJsonData.auto[0].frequency}
+
+        />
+
+      </div>
+
+        {this.props.appJsonData.passive.map((n,inx)=>
+          <div key={inx}>
+            <Button
+              message={n.name}
+              onClick={(e) => {
+                e.preventDefault();
+                this.props.onClickCountAdd(n.data)
+              }}
+            />
+          </div>
+        )}
+
         <Button
+          message={'click me'}
           onClick={(e) => {
             e.preventDefault();
-            this.props.onClickCount(1)
+            this.props.onClickCount()
           }}
         />
 
