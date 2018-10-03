@@ -15,6 +15,6 @@ export function userFetchRequested(data){
   return {type: USER_FETCH_REQUESTED,data}
 }
 
-// export function setAppJson(setData){
-//   return {type: SET_APP_JSON, setData}
-// }
+export function setAppJson(){
+  return {type: SET_APP_JSON}
+}

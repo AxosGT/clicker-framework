@@ -20,10 +20,7 @@ class App extends Component {
       <div className="App">
 
       <div>
-        <AutoClicker
-          frequency={this.props.appJsonData.auto[0].frequency}
-
-        />
+        
 
       </div>
 

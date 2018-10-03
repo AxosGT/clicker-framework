@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import clickCount from './clickCount.js'
+import clickCount from './clickCount'
 import setAppJson from './setAppJson'
 
 

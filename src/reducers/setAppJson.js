@@ -1,27 +1,12 @@
 import {SET_APP_JSON} from '../actions/index';
-const gameDataDefult=
-{
-  "passive": [
-    {
-      "id":"Default",
-      "name":"Default Passive",
-      "data":0
-    }
-  ],
-  "auto": [
-    {
-      "id":"Default",
-      "name":"Default Auto",
-      "data":0,
-      "frequency":0
-    }
-  ]
-}
+import gameDataInport from '../game-info/gameInfo'
+import gameDataDefult from '../game-info/gameInfoDefault'
 
-function setAppJson(state = gameDataDefult, action){
+
+function setAppJson(state = gameDataDefult,action){
   switch (action.type) {
     case SET_APP_JSON:
-      return action.setData
+      return gameDataInport
     default:
       return state
   }
