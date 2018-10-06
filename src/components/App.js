@@ -17,12 +17,20 @@ class App extends Component {
   render() {
     //console.log(this.props.appJsonData.auto[0].frequency)
     return (
-      <div className="App">
+    <div>
 
-      <div>
-        
 
-      </div>
+      {this.props.appJsonData.auto.map((n,inx)=>
+        <div key={inx}>
+          <Button
+            message={n.name}
+            onClick={(e) => {
+              e.preventDefault();
+              this.props.onAutoAdd(n.frequency)
+            }}
+          />
+       </div>
+      )}
 
         {this.props.appJsonData.passive.map((n,inx)=>
           <div key={inx}>
@@ -30,7 +38,7 @@ class App extends Component {
               message={n.name}
               onClick={(e) => {
                 e.preventDefault();
-                this.props.onClickCountAdd(n.data)
+                this.props.onClickCountSumAdd(n.data)
               }}
             />
           </div>
@@ -40,7 +48,7 @@ class App extends Component {
           message={'click me'}
           onClick={(e) => {
             e.preventDefault();
-            this.props.onClickCount()
+            this.props.onClickCount(1)
           }}
         />
 

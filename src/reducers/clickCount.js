@@ -1,14 +1,14 @@
 import {CLICK_COUNT} from '../actions/index';
-import {CLICK_COUNT_ADD} from '../actions/index';
+import {CLICK_COUNT_SUMADD} from '../actions/index';
 
-function clickCount(state = {myCount:0,mySumAdded:1}, action){
+function clickCount(state = {myCount:0,mySumAdded:0}, action){
   switch (action.type) {
     case CLICK_COUNT:
       return(
-      {myCount:(state.myCount+state.mySumAdded),
+      {myCount:(state.myCount+state.mySumAdded+action.added),
         mySumAdded:state.mySumAdded}
       )
-    case CLICK_COUNT_ADD:
+    case CLICK_COUNT_SUMADD:
       return(
       {myCount:state.myCount,
         mySumAdded:(state.mySumAdded+action.sumAdded)}
