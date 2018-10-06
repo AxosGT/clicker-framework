@@ -3,6 +3,19 @@ import { call, put, take,takeEvery } from 'redux-saga/effects';
 
 
 //fetch('/game-info/gameInfo.json')
+function* gameLoopSaga(){
+  while(true){
+    const timeCount = window.requestAnimationFrame(()=>new Date().getTime())
+    if(!timeCount%200){
+      yield console.log(timeCount)
+    }
+    // if (game.crashed){
+    //   break
+    // }
+
+  }
+
+}
 
 function* fetchGameInfo() {
    try {
@@ -16,8 +29,8 @@ function* fetchGameInfo() {
 }
 
 function* mySaga() {
-
-  yield takeEvery("USER_FETCH_REQUESTED", fetchGameInfo);
+  yield takeEvery("SET_APP_JSON", gameLoopSaga);
+  //yield takeEvery("USER_FETCH_REQUESTED", fetchGameInfo);
 
 }
 
