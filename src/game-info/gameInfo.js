@@ -14,7 +14,7 @@ export default
     {
       "id":"3",
       "name":"test p3",
-      "data":20
+      "data":900
     }
   ],
   "auto": [
