@@ -7,10 +7,11 @@ import {setAppJson} from '../actions/index'
 import {clickPerSec} from '../actions/index'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('count:'+state.clickCount.myCount)
   return {
     clickCount: state.clickCount.myCount,
-    appJsonData: state.setAppJson
+    sumAdded: state.clickCount.mySumAdded,
+    appJsonData: state.setAppJson,
+    clickPerSec: state.clickPerSec
   }
 }
 

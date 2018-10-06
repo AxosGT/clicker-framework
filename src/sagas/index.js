@@ -18,9 +18,9 @@ function* gameLoopSaga(){
   while(true){
     let cps = yield select((state)=>state.clickPerSec);
     let passive = yield select((state)=>state.clickCount.mySumAdded);
-    console.log('CPS Base:'+cps)
-    console.log('passive Added:'+passive)
-    console.log('CPS ie cps+cps*passive:'+(cps+cps*passive))
+    //console.log('CPS Base:'+cps)
+    //console.log('passive Added:'+passive)
+    //console.log('CPS ie cps+cps*passive:'+(cps+cps*passive))
     yield delay(1000);
     yield put(clickCount(cps));
   }

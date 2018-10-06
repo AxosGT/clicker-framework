@@ -55,6 +55,18 @@ class App extends Component {
         <div>
           {this.props.clickCount}
         </div>
+        <div>
+          cps base:
+          {this.props.clickPerSec}
+        </div>
+        <div>
+          passive:
+          {this.props.sumAdded}
+        </div>
+        <div>
+          cps ie cps+cps*passive:
+          {this.props.clickPerSec+(this.props.clickPerSec*this.props.sumAdded)}
+        </div>
 
       </div>
 

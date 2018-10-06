@@ -5,7 +5,7 @@ function clickCount(state = {myCount:0,mySumAdded:0}, action){
   switch (action.type) {
     case CLICK_COUNT:
       return(
-      {myCount:(state.myCount+state.mySumAdded+action.added),
+      {myCount:(state.myCount+action.added+(state.mySumAdded*action.added)),
         mySumAdded:state.mySumAdded}
       )
     case CLICK_COUNT_SUMADD:
