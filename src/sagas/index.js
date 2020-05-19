@@ -1,5 +1,4 @@
-import { call, put, take,takeEvery,select } from 'redux-saga/effects';
-import { delay } from 'redux-saga'
+import { call, put, take, takeEvery, select, delay } from 'redux-saga/effects';
 import {clickCount} from '../actions/index'
 //import "CLICK_COUNT" from '../actions/index.js';
 
